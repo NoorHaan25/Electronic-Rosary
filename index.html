@@ -7,69 +7,95 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css">
-    <!-- <link rel="stylesheet" href="./css/all.min.css"> -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <!-- /<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,900"
       rel="stylesheet"
     />
     <title>Electronic Rosary</title>
   </head>
-  <body>
-    <div class="electronic-rosary">
-      <div class="shape-electronic-rosary">
-        <div class="screen-digit">
-          <div class="layout-screen-digit"></div>
-          <div class="contain-screen-digit"></div>
-        </div>
-        <div class="buttons-wrapper">
-          <div class="wrapper-button">
-            <div class="button">
-              <button></button>
-            </div>
-            <span>Light</span>
-          </div>
-          <div class="wrapper-button">
-            <div class="button">
-              <button></button>
-            </div>
-          </div>
-          <div class="wrapper-button">
-            <div class="button">
-              <button></button>
-            </div>
-            <span>Reset</span>
-          </div>
-        </div>
-      </div>
-      <div class="hand">
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+  <body >
+    <div id="colors" class="colors">
+      <img src="./img/color-icon.png" alt="color-icon"/>
     </div>
+    <section>
+      <div class="container">
+        <div class="row">
+         <div class="col-lg-8 col-md-8 col-sm-8">
+          <div class="electronic-rosary">
+            <div class="shape-electronic-rosary" id="electronic-rosary">
+              <div class="screen-digit">
+                <div class="layout-screen-digit"></div>
+                <div class="contain-screen-digit" id="screen"></div>
+              </div>
+              <div class="buttons-wrapper">
+                <div class="wrapper-button">
+                  <div class="button">
+                    <button  id="button-theme"></button>
+                  </div>
+                  <span id="theme-text">Dark</span>
+                </div>
+                <div class="wrapper-button">
+                  <div class="button" id="counter">
+                    <button></button>
+                  </div>
+                </div>
+                <div class="wrapper-button">
+                  <div class="button" id="button-reset">
+                    <button></button>
+                  </div>
+                  <span>Reset</span>
+                </div>
+              </div>
+              <div class="dark-shape">
+              </div>
+            </div>
+            <div class="hand">
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="">
+            
+          </div>
+         </div>
+        </div>
+      </div>
+    </section>
+    <div class="theme">
+
+    </div>
+    <script src="./js/jquery.slim.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>
