@@ -144,7 +144,6 @@ function displayMorningAzkar(listOfData ){
     `
   }
   morningAzkar.innerHTML = templateContent;
-  eveningAzkar.innerHTML = templateContent;
   }
   function displayEveningingAzkar(listOfData ){
     console.log('listOfDataenee', listOfData);

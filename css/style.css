@@ -1,56 +1,56 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-:root{
-  --text-color:#ffffff;
-  --background-color-hand:rgb(0 0 0 / 40%);
-  --background-color-shape:transparent;
-  --background-color:#ffffff;
-  --border-color:#000000
+:root {
+  --text-color: #ffffff;
+  --background-color-hand: rgb(0 0 0 / 40%);
+  --background-color-shape: transparent;
+  --background-color: #ffffff;
+  --border-color: #000000;
 }
-.dark-text{
-  --text-color:#000000;
+.dark-text {
+  --text-color: #000000;
 }
-.dark-mood{
-  --background-color:#000000;
-  --text-color:#ffffff;
-  --background-color-shape:rgb(0 0 0 / 50%);
-  --background-color-hand:rgb(255 255 255 / 40%);
-  --border-color:#ffffff;
+.dark-mood {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --background-color-shape: rgb(0 0 0 / 50%);
+  --background-color-hand: rgb(255 255 255 / 40%);
+  --border-color: #ffffff;
 }
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
 
-.electronic-rosary{
+.electronic-rosary {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   position: fixed;
 }
-.shape-electronic-rosary{
+.shape-electronic-rosary {
   background-color: #452c63;
   width: 400px;
   height: 430px;
   border-radius: 160px 160px 250px 250px;
   position: relative;
- display: flex;
- flex-direction: column;
- z-index: 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
 }
-.dark-shape{
+.dark-shape {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 160px 160px 250px 250px;
   z-index: -2;
-  background-color: var(--background-color-shape)
+  background-color: var(--background-color-shape);
 }
-.shape-electronic-rosary::after{
+.shape-electronic-rosary::after {
   content: "";
   position: absolute;
   /* background-color: #ff1919; */
@@ -59,27 +59,19 @@ body{
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-   border-radius: 160px 160px 250px 250px;
- 
-   border: 3px dashed var(--border-color);
-  z-index: -1; 
+  border-radius: 160px 160px 250px 250px;
 
+  border: 3px dashed var(--border-color);
+  z-index: -1;
 }
-/* @keyframes rotate{
-  0%{
-    transform: rotate(0);
-  }
-  100%{
-    transform: rotate(360deg);
-  }
-} */
-.screen-digit{
+
+.screen-digit {
   position: relative;
   display: flex;
   justify-content: center;
   z-index: 1;
 }
- .layout-screen-digit{
+.layout-screen-digit {
   position: absolute;
   background-color: #000;
   border-radius: 80px;
@@ -90,7 +82,7 @@ body{
   transform: translate(-50%, -50%);
   z-index: -1;
 }
-.contain-screen-digit{
+.contain-screen-digit {
   background-color: #c0c0c0;
   border: 5px solid #fff;
   border-radius: 25px;
@@ -104,30 +96,29 @@ body{
   font-size: 50px;
 }
 
-.buttons-wrapper{
+.buttons-wrapper {
   padding: 0 50px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 50px;
 }
-.buttons-wrapper .button{
+.buttons-wrapper .button {
   position: relative;
   z-index: 1;
 }
-.buttons-wrapper .button button{
-  
+.buttons-wrapper .button button {
   border: none;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-image: linear-gradient(to left top , rgb( 0 , 0  ,0 ,0.25) , #e6e6e6);
+  background-image: linear-gradient(to left top, rgb(0, 0, 0, 0.25), #e6e6e6);
   border: 2px solid #7c7c7c;
 }
-.buttons-wrapper .button::after{
-  content: '';
+.buttons-wrapper .button::after {
+  content: "";
   position: absolute;
-  background-image:  linear-gradient(to left top , rgb( 0 , 0  ,0 ) , #e6e6e6);
+  background-image: linear-gradient(to left top, rgb(0, 0, 0), #e6e6e6);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -136,27 +127,27 @@ body{
   transform: translate(-50%, -50%);
   z-index: -1;
 }
-.wrapper-button{
+.wrapper-button {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.wrapper-button span{
+.wrapper-button span {
   color: var(--text-color);
   display: inline-block;
   font-size: 15px;
   padding: 10px 0;
   font-weight: 600;
 }
-.buttons-wrapper .wrapper-button:nth-child(2) .button::after{
+.buttons-wrapper .wrapper-button:nth-child(2) .button::after {
   width: 110px;
   height: 110px;
 }
-.buttons-wrapper .wrapper-button:nth-child(2) .button button{
+.buttons-wrapper .wrapper-button:nth-child(2) .button button {
   width: 100px;
   height: 100px;
 }
-.hand{
+.hand {
   position: absolute;
   width: 15%;
   height: 100%;
@@ -164,24 +155,24 @@ body{
   top: 0;
   transform: translateX(-50%);
   background-color: var(--background-color-hand);
-  z-index:-1;
+  z-index: -1;
   overflow: hidden;
 }
-.hand >ul{
+.hand > ul {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.hand >ul > li{
+.hand > ul > li {
   width: 5px;
   height: 5px;
   /* background-color:  #00000038; */
-  box-shadow: rgba(0, 0, 0 , 0.16) 0px 3px 6px , rgba(0, 0, 0 ,0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin: 13px;
   padding: 8px;
   border-radius: 50%;
 }
-.theme{
+.theme {
   position: fixed;
   inset: 0;
   background-color: var(--background-color);
@@ -189,24 +180,11 @@ body{
   height: 100%;
   z-index: -55;
 }
-.colors{
-  /* position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  background-color: #E0E0E0;
-  width: 70px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px 0 0 10px;
-  cursor: pointer; */
+.colors {
   position: fixed;
-  top: 82px;
+  top: 0;
   right: 0;
-  /* transform: translateY(-50%); */
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
   width: 70px;
   height: 70px;
   display: flex;
@@ -214,66 +192,100 @@ body{
   justify-content: center;
   border-radius: 10px 0 0 10px;
   cursor: pointer;
-
+  z-index: 5555;
 }
-.colors > img{
+.colors > img {
   width: 50px;
   transition: transform 0.8s linear;
 }
-.colors > img:hover{
+.colors > img:hover {
   transform: rotate(360deg);
 }
 .content-text {
   height: 100%;
   padding-top: 75px;
 }
-.content-text > .azkar{
+.content-text > .azkar {
   /* background-color: purple; */
   height: 50%;
   width: 100%;
   overflow-y: scroll;
 }
-.content-text > .azkar .card{
+.content-text > .azkar .card {
   text-align: center;
   padding: 10px 20px;
-  margin-bottom:10px ;
+  margin-bottom: 10px;
 }
-.content-text > .azkar .card > h2{
+.content-text > .azkar .card > h2 {
   font-size: 17px;
 }
-.nav-pills{
+.nav-pills {
   justify-content: center;
 }
-.nav-pills .nav-link.active{
+.nav-pills .nav-link.active {
   background-color: #7c7c7c;
 }
-.tab-content .card{
+.tab-content .card {
   border: none;
   /* display: flex;
   align-items: center;
   flex-direction: row; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 54px 0;
-
 }
-.tab-content .card > .repeat{
+.tab-content .card > .repeat {
   height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #cccccc;
 }
-.tab-content .card > .zekr{
+.tab-content .card > .zekr {
   padding: 20px;
   text-align: right;
 }
-.tab-content .card > .zekr >p:last-child{
+.tab-content .card > .zekr > p:last-child {
   color: #777;
-  font-family: 'Cairo', sans-serif;
+  font-family: "Cairo", sans-serif;
 }
-.nav-pills .nav-link.active{
+.nav-pills .nav-link.active {
   background-color: var(--background-color-hand);
 }
-.nav-pills .nav-link{
+.nav-pills .nav-link {
   color: var(--text-color);
+}
+@media screen and (max-width: 991.5px) {
+  .electronic-rosary {
+    position: relative;
+  }
+  .hand {
+    border-radius: 10px;
+  }
+}
+@media screen and (max-width: 575.5px) {
+  .shape-electronic-rosary {
+    width: 330px;
+    height: 360px;
+  }
+  .buttons-wrapper {
+    padding: 0 45px;
+    margin-top: 18px;
+  }
+  .buttons-wrapper .button button {
+    width: 30px;
+    height: 30px;
+  }
+  .buttons-wrapper .wrapper-button:nth-child(2) .button button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .buttons-wrapper .button::after {
+    width: 40px;
+    height: 40px;
+  }
+  .buttons-wrapper .wrapper-button:nth-child(2) .button::after {
+    width: 90px;
+    height: 90px;
+  }
 }
