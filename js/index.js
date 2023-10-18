@@ -8,10 +8,8 @@ const themeText = document.getElementById("theme-text");
 const buttonReset = document.getElementById("button-reset");
 const screen = document.getElementById("screen");
 const buttonCounter = document.getElementById("counter");
-const morningAzkar =document.getElementById("morning-azkar");
-const eveningAzkar =document.getElementById("evening-azkar");
-// const navLink= document.querySelectorAll(".nav-link");
-// // console.log(navLink , 'nav-link');
+const morningAzkar = document.getElementById("morning-azkar");
+const eveningAzkar = document.getElementById("evening-azkar");
 let theme = "";
 let textColor = "";
 let counter = 0;
@@ -20,6 +18,8 @@ const getColor = JSON.parse(localStorage.getItem("color")) || "";
 const getTextColor = JSON.parse(localStorage.getItem("text-color"));
 const BASE_URL = "https://api-azkar.onrender.com/";
 electronicRosary.style.backgroundColor = getColor;
+/*                                      change color card    */
+
 function generateHexColor() {
   let randomColors = [];
   for (let i = 0; i < 6; i++) {
@@ -58,24 +58,24 @@ colors.addEventListener("click", () => {
   }
   localStorage.setItem("color", JSON.stringify(saveColor));
   electronicRosary.style.backgroundColor = saveColor;
+  colorNav.style.backgroundColor = saveColor;
 });
 if (getTextColor === "dark-text") {
-  console.log("text color dark");
+  // console.log("text color dark");
   bodyElement.classList.add("dark-text");
 } else {
-  console.log("text color light");
+  // console.log("text color light");
   bodyElement.classList.remove("dark-text");
 }
-
 
 /*                     Dark Or Light Mood                 */
 buttonTheme.addEventListener("click", () => {
   bodyElement.classList.toggle("dark-mood");
   const classAttributeValue = bodyElement.getAttribute("class");
-  console.log("classAttributeValue = " + classAttributeValue);
+  // console.log("classAttributeValue = " + classAttributeValue);
   if (classAttributeValue.includes("dark-mood")) {
     theme = "dark";
-    console.log("theme = " + theme);
+    // console.log("theme = " + theme);
     localStorage.setItem("theme", JSON.stringify(theme));
     themeText.textContent = "Light";
   } else {
@@ -109,27 +109,27 @@ buttonReset.addEventListener("click", () => {
   screen.textContent = counter;
 });
 /*                         Fetch Api-data                  */
-let getDataMorningAzkar = async function(){
-  const response = await fetch(`${BASE_URL}morning-azkar`)
+let getDataMorningAzkar = async function () {
+  const response = await fetch(`${BASE_URL}morning-azkar`);
   const data = await response.json();
-  console.log('data', data);
+  console.log("data", data);
   let listOfAzkar = data.content;
-  console.log('listOfAzkar', listOfAzkar);
-  displayMorningAzkar(listOfAzkar)
-}
-let getDataEveningingAzkar = async function(){
-  const response = await fetch(`${BASE_URL}evening-azkar`)
+  console.log("listOfAzkar", listOfAzkar);
+  displayMorningAzkar(listOfAzkar);
+};
+let getDataEveningingAzkar = async function () {
+  const response = await fetch(`${BASE_URL}evening-azkar`);
   const data = await response.json();
-  console.log('data', data);
+  console.log("data", data);
   let listOfAzkar = data.content;
-  console.log('listOfAzkarEven', listOfAzkar);
-  displayEveningingAzkar(listOfAzkar)
-}
-getDataEveningingAzkar()
-getDataMorningAzkar()
-function displayMorningAzkar(listOfData ){
-  console.log('listOfData', listOfData);
-  let templateContent ="";
+  console.log("listOfAzkarEven", listOfAzkar);
+  displayEveningingAzkar(listOfAzkar);
+};
+getDataEveningingAzkar();
+getDataMorningAzkar();
+function displayMorningAzkar(listOfData) {
+  console.log("listOfData", listOfData);
+  let templateContent = "";
   for (let i = 0; i < listOfData.length; i++) {
     templateContent += `
     <div class="card">
@@ -141,16 +141,16 @@ function displayMorningAzkar(listOfData ){
       <p>${listOfData[i].bless}</p>
     </div>
   </div>
-    `
+    `;
   }
   morningAzkar.innerHTML = templateContent;
   eveningAzkar.innerHTML = templateContent;
-  }
-  function displayEveningingAzkar(listOfData ){
-    console.log('listOfDataenee', listOfData);
-    let templateContent ="";
-    for (let i = 0; i < listOfData.length; i++) {
-      templateContent += `
+}
+function displayEveningingAzkar(listOfData) {
+  console.log("listOfDataenee", listOfData);
+  let templateContent = "";
+  for (let i = 0; i < listOfData.length; i++) {
+    templateContent += `
       <div class="card">
       <div class="repeat"><span> ${listOfData[i].repeat}</span></div>
       <div class="zekr">
@@ -160,8 +160,8 @@ function displayMorningAzkar(listOfData ){
         <p>${listOfData[i].bless}</p>
       </div>
     </div>
-      `
-    }
-  
-    eveningAzkar.innerHTML = templateContent;
-    }
+      `;
+  }
+
+  eveningAzkar.innerHTML = templateContent;
+}

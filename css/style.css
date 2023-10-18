@@ -10,6 +10,7 @@
   --background-color-shape: transparent;
   --background-color: #ffffff;
   --border-color: #000000;
+  --text-color-azkar:#000000;
 }
 .dark-text {
   --text-color: #000000;
@@ -20,6 +21,7 @@
   --background-color-shape: rgb(0 0 0 / 50%);
   --background-color-hand: rgb(255 255 255 / 40%);
   --border-color: #ffffff;
+  --text-color-azkar:#ffffff
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -60,8 +62,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 160px 160px 250px 250px;
-
-  border: 3px dashed var(--border-color);
+  border: 4px dashed var(--border-color);
   z-index: -1;
 }
 
@@ -249,7 +250,8 @@ body {
   background-color: var(--background-color-hand);
 }
 .nav-pills .nav-link {
-  color: var(--text-color);
+  color: var(--text-color-azkar);
+  background-color: var( --background-color);
 }
 @media screen and (max-width: 991.5px) {
   .electronic-rosary {
