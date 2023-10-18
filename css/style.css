@@ -51,21 +51,8 @@ body {
   border-radius: 160px 160px 250px 250px;
   z-index: -2;
   background-color: var(--background-color-shape);
+  border: 3px dashed var(--border-color);
 }
-.shape-electronic-rosary::after {
-  content: "";
-  position: absolute;
-  /* background-color: #ff1919; */
-  width: 100%;
-  height: 100%;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 160px 160px 250px 250px;
-  border: 4px dashed var(--border-color);
-  z-index: -1;
-}
-
 .screen-digit {
   position: relative;
   display: flex;
@@ -150,7 +137,7 @@ body {
 }
 .hand {
   position: absolute;
-  width: 15%;
+  width: 20%;
   height: 100%;
   left: 50%;
   top: 0;
@@ -286,5 +273,8 @@ body {
   .buttons-wrapper .wrapper-button:nth-child(2) .button::after {
     width: 90px;
     height: 90px;
+  }
+  .hand {
+    width: 15%;
   }
 }
